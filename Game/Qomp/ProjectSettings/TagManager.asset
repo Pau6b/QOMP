@@ -7,6 +7,8 @@ TagManager:
   - Floor
   - Wall
   - Tire
+  - RespawnPoint
+  - Spike
   layers:
   - Default
   - TransparentFX
