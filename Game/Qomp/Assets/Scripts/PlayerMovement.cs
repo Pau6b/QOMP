@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_tireRb = GetComponent<Rigidbody>();
         m_direction.Normalize();
-        m_tireRb.velocity = new Vector3(m_speed * m_direction.x, 0, m_speed * m_direction.z);
+        m_tireRb.velocity = m_speed * m_direction;
     }
 
     void Update()
@@ -22,12 +22,13 @@ public class PlayerMovement : MonoBehaviour
             Vector3 velocity = m_tireRb.velocity;
             velocity.z = -velocity.z;
             m_tireRb.velocity = velocity;
+            m_direction = m_tireRb.velocity.normalized;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag != "Floor")
+        if (collision.gameObject.tag == "Wall")
         {
             m_direction = m_tireRb.velocity.normalized;
             if (Mathf.Abs(m_tireRb.velocity.x) != Mathf.Abs(m_tireRb.velocity.z))
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
                     m_direction.z = -1;
                 }
                 m_direction.Normalize();
-                m_tireRb.velocity = new Vector3(m_speed * m_direction.x, 0, m_speed * m_direction.z);
+                m_tireRb.velocity = m_speed * m_direction;
             }
         }
     }
