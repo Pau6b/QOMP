@@ -22,7 +22,7 @@ namespace Game
                         SceneManager.LoadScene("MainMenu");
                         break;
                     case SceneType.Level1:
-                        SceneManager.LoadScene("SampleScene");
+                        SceneManager.LoadScene("Game1Scene");
                         break;
                     default:
                         break;

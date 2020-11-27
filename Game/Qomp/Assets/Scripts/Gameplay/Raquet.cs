@@ -15,6 +15,8 @@ public class Raquet : MonoBehaviour
     [SerializeField] private bool m_fastAproach;
     [SerializeField] private bool m_automatic;
     [SerializeField] private Vector3 m_automatic_vel;
+    bool m_isFollowingPlayer = false;
+    bool m_changeDirection = false;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class Raquet : MonoBehaviour
 
         if (distance < m_distance)
         {
+            m_isFollowingPlayer = true;
             Vector3 new_dir_x = new Vector3(pos_Ufo.x - pos_Raq.x, 0, 0);
             Vector3 new_dir_z = new Vector3(0, 0, pos_Ufo.y - pos_Raq.y);
             new_dir_x.Normalize();
@@ -64,6 +67,11 @@ public class Raquet : MonoBehaviour
         
         else if (m_automatic)
         {
+            if (m_changeDirection)
+            {
+                m_changeDirection = false;
+                m_automatic_vel = -m_automatic_vel;
+            }
             m_tireRb.velocity = new Vector3(m_direction.x*m_automatic_vel.x, m_direction.y * m_automatic_vel.y, m_direction.z * m_automatic_vel.z);
         }
 
@@ -99,7 +107,21 @@ public class Raquet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            m_automatic_vel = new Vector3(-m_automatic_vel.x, -m_automatic_vel.y, -m_automatic_vel.z);
+            if (m_isFollowingPlayer)
+            {
+                m_changeDirection = true;
+            }
+            else
+            {
+                m_automatic_vel = -m_automatic_vel;
+            }
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            m_changeDirection = false;
         }
     }
 

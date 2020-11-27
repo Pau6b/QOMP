@@ -18,6 +18,9 @@ namespace Game
             {
                 m_rb = GetComponent<Rigidbody>();
                 m_velocity = m_rb.velocity;
+                Vector3 newPosition = m_spawner.transform.position;
+                newPosition.y = transform.position.y;
+                transform.position = newPosition;
             }
 
             private void OnTriggerEnter(Collider i_other)
