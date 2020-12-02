@@ -10,8 +10,8 @@ namespace Game
         public class DetectAndInformCollision : MonoBehaviour
         {
             // Start is called before the first frame update
-            public delegate void OnCollideInformed(Collision i_other);
-            public event OnCollideInformed Collided;
+            public delegate void OnCollisionInformed(Collision i_other);
+            public event OnCollisionInformed Collided;
             private void OnCollisionEnter(Collision i_other)
             {
                 if (i_other.gameObject.tag == "Player")

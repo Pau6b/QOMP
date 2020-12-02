@@ -70,7 +70,7 @@ public class Raquet : MonoBehaviour
             if (m_changeDirection)
             {
                 m_changeDirection = false;
-                m_automatic_vel = -m_automatic_vel;
+                 m_automatic_vel = -m_automatic_vel;
             }
             m_tireRb.velocity = new Vector3(m_direction.x*m_automatic_vel.x, m_direction.y * m_automatic_vel.y, m_direction.z * m_automatic_vel.z);
         }

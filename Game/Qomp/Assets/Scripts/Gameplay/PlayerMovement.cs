@@ -12,6 +12,9 @@ namespace Game
             public float m_speed;
             Rigidbody m_tireRb;
 
+            public delegate void OnDirectionChanged(Vector3 i_direction);
+            public event OnDirectionChanged DirectionChanged;
+
             void Start()
             {
                 m_tireRb = GetComponent<Rigidbody>();
@@ -27,8 +30,10 @@ namespace Game
                     velocity.z = -velocity.z;
                     m_tireRb.velocity = velocity;
                     m_direction = m_tireRb.velocity.normalized;
+                    DirectionChanged?.Invoke(m_direction);
                 }
             }
+
 
             private void OnCollisionEnter(Collision collision)
             {
@@ -56,6 +61,7 @@ namespace Game
                         m_direction.Normalize();
                         m_tireRb.velocity = m_speed * m_direction;
                     }
+                       DirectionChanged?.Invoke(m_direction);
                 }
             }
         }
