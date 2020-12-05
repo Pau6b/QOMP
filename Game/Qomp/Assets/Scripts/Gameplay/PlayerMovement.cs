@@ -14,6 +14,7 @@ namespace Game
 
             public delegate void OnDirectionChanged(Vector3 i_direction);
             public event OnDirectionChanged DirectionChanged;
+            public event OnDirectionChanged DirectionChangedRequested;
 
             [SerializeField] private Transport m_TransportMovement;
             private bool m_fixDir = true;
@@ -36,6 +37,7 @@ namespace Game
                     m_tireRb.velocity = velocity;
                     m_direction = m_tireRb.velocity.normalized;
                     DirectionChanged?.Invoke(m_direction);
+                    DirectionChangedRequested?.Invoke(m_direction);
                 }
             }
 
