@@ -3,7 +3,27 @@ guid: d841d1550f0acd54392a0590af6b5c31
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_Lil
+    second: {fileID: 2100000, guid: bb0d6c36fe9401d458ea6285d327da11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leak_Decal
+    second: {fileID: 2100000, guid: da3fca5ec1d4d84428f4b646eef6e27e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poor_Door
+    second: {fileID: 2100000, guid: 5ab753dab151bfd41b56ecac25063166, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_Poor
+    second: {fileID: 2100000, guid: 1f5cda15bdbc52441949e935770c36aa, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
