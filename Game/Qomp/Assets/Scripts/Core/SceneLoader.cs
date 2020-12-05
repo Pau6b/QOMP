@@ -14,6 +14,7 @@ namespace Game
                 MainMenu,
                 Level1
             }
+
             static public void LoadScene(SceneType i_sceneType)
             {
                 switch (i_sceneType)
