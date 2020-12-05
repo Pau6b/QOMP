@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1292917751076630514}
   - component: {fileID: 1292917751076630515}
   - component: {fileID: 4643346033243283614}
+  - component: {fileID: 1625380445922372476}
   m_Layer: 0
   m_Name: Ufo
   m_TagString: Player
@@ -123,6 +124,21 @@ MonoBehaviour:
   m_smokePrefab: {fileID: 5193554012419786859, guid: 61bd153bf4f3ebf4191562eae515da2c, type: 3}
   m_particleContainer: {fileID: 0}
   m_distanceToInstantiate: 0
+--- !u!114 &1625380445922372476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560179921161997976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5257fd83cfe8ce04180987d774dc3560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_particle: {fileID: 2578831563708750246, guid: 0c6109efcd509194d8678ff10881d053, type: 3}
+  m_particleContainer: {fileID: 0}
+  m_spawnFrequency: 10
 --- !u!1 &2030242292623961799
 GameObject:
   m_ObjectHideFlags: 0
