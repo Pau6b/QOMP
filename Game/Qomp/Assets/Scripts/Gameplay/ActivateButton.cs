@@ -7,11 +7,15 @@ public class ActivateButton : MonoBehaviour
 
 
     // Start is called before the first frame update
-    private bool enab = true;
-
-    public bool GetIsEnabled()
+    public bool enab = true;
+    void Start()
     {
-        return enab;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     private void OnCollisionEnter(Collision collision)
