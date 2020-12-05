@@ -10,7 +10,7 @@ namespace Game
         public class EndLevelScript : MonoBehaviour
         {
             [SerializeField] private DetectAndInformCollision m_endLevelPoint;
-            [SerializeField] private string m_nextSceneName;
+            [SerializeField] private Core.SceneLoader.SceneType m_nextSceneName;
 
             private void Start()
             {
@@ -26,7 +26,7 @@ namespace Game
             {
                 if (i_other.gameObject.tag == "Player")
                 {
-                    Core.SceneLoader.LoadScene(Core.SceneLoader.SceneType.MainMenu);
+                    Core.SceneLoader.LoadScene(m_nextSceneName);
                 }
             }
 
