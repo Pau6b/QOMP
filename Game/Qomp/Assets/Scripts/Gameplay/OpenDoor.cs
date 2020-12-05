@@ -16,7 +16,7 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!m_button1.GetIsEnabled() && !m_button2.GetIsEnabled() && !m_button3.GetIsEnabled())
+        if (!m_button1.enab && !m_button2.enab && !m_button3.enab)
         {
             Destroy(this.gameObject);
         }

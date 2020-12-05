@@ -9,8 +9,6 @@ TagManager:
   - Tire
   - RespawnPoint
   - Spike
-  - SnakeEvolvePoint
-  - SnakePart
   layers:
   - Default
   - TransparentFX
