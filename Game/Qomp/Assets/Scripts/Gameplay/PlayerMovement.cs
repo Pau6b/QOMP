@@ -21,8 +21,8 @@ namespace Game
 
             void Start()
             {
-                //m_TransportMovement.PlataformModeOn += PlatformMovementOn;
-                //m_TransportMovement.PlataformModeOff += PlatformMovementOff;
+                m_TransportMovement.PlataformModeOn += PlatformMovementOn;
+                m_TransportMovement.PlataformModeOff += PlatformMovementOff;
                 m_tireRb = GetComponent<Rigidbody>();
                 m_direction.Normalize();
                 m_tireRb.velocity = m_speed * m_direction;
