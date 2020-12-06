@@ -31,5 +31,5 @@ Material:
     - _Shininess: 0.07378617
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.77205884, g: 0.5894583, b: 0.47118297, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
