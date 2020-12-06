@@ -43,7 +43,10 @@ namespace Game
 
             void FixedUpdate()
             {
-                RenormalizeDirection();
+                if (m_fixDir)
+                {
+                    RenormalizeDirection();
+                }
             }
 
 
@@ -86,6 +89,8 @@ namespace Game
             {
                 m_direction = i_newDir;
                 m_tireRb.velocity = m_speed * m_direction;
+                GetComponent<Collider>().isTrigger = true;
+                m_tireRb.useGravity = false;
                 m_fixDir = false;
             }
 
@@ -99,6 +104,8 @@ namespace Game
                 m_direction = new Vector3(i, 0, i);
                 m_direction.Normalize();
                 m_tireRb.velocity = m_speed * m_direction;
+                GetComponent<Collider>().isTrigger = false;
+                m_tireRb.useGravity = true;
                 m_fixDir = true;
             }
         }
