@@ -9,6 +9,10 @@ namespace Game
         public class SnakeComponent : MonoBehaviour
         {
             // Start is called before the first frame update
+            public delegate void OnSnakeEvent();
+            public event OnSnakeEvent SnakeStarted;
+            public event OnSnakeEvent SnakeEnded;
+
             [SerializeField] private GameObject m_snakePart;
             [SerializeField] private GameObject m_snakePartsContainer;
             private bool m_inSnake;
@@ -62,6 +66,7 @@ namespace Game
                 {
                     m_inSnake = true;
                     m_previousDirectionChangePoint = transform.position;
+                    SnakeStarted?.Invoke();
                 }
             }
              
@@ -72,6 +77,7 @@ namespace Game
                 {
                     GameObject.Destroy(m_snakePartsContainer.transform.GetChild(i).gameObject);
                 }
+                SnakeEnded?.Invoke();
             }
         }
 

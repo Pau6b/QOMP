@@ -14,14 +14,15 @@ namespace Game
 
             public delegate void OnDirectionChanged(Vector3 i_direction);
             public event OnDirectionChanged DirectionChanged;
+            public event OnDirectionChanged DirectionChangedRequested;
 
             [SerializeField] private Transport m_TransportMovement;
             private bool m_fixDir = true;
 
             void Start()
             {
-                m_TransportMovement.PlataformModeOn += PlatformMovementOn;
-                m_TransportMovement.PlataformModeOff += PlatformMovementOff;
+                //m_TransportMovement.PlataformModeOn += PlatformMovementOn;
+                //m_TransportMovement.PlataformModeOff += PlatformMovementOff;
                 m_tireRb = GetComponent<Rigidbody>();
                 m_direction.Normalize();
                 m_tireRb.velocity = m_speed * m_direction;
@@ -36,38 +37,49 @@ namespace Game
                     m_tireRb.velocity = velocity;
                     m_direction = m_tireRb.velocity.normalized;
                     DirectionChanged?.Invoke(m_direction);
+                    DirectionChangedRequested?.Invoke(m_direction);
+                }
+            }
+
+            void FixedUpdate()
+            {
+                RenormalizeDirection();
+            }
+
+
+            void RenormalizeDirection()
+            {
+                m_direction = m_tireRb.velocity.normalized;
+                if (Mathf.Abs(m_tireRb.velocity.x) != Mathf.Abs(m_tireRb.velocity.z) && m_fixDir)
+                {
+                    if (m_direction.x > 0)
+                    {
+                        m_direction.x = 1;
+                    }
+                    else if (m_direction.x < 0)
+                    {
+                        m_direction.x = -1;
+                    }
+                    if (m_direction.z > 0)
+                    {
+                        m_direction.z = 1;
+                    }
+                    else if (m_direction.z < 0)
+                    {
+                        m_direction.z = -1;
+                    }
+                    m_direction.Normalize();
+                    m_tireRb.velocity = m_speed * m_direction;
                 }
             }
 
 
             private void OnCollisionEnter(Collision collision)
             {
-                if (collision.gameObject.tag == "Wall")
-                {
-                      m_direction = m_tireRb.velocity.normalized;
-                    if (Mathf.Abs(m_tireRb.velocity.x) != Mathf.Abs(m_tireRb.velocity.z) && m_fixDir)
-                    {
-                        if (m_direction.x > 0)
-                        {
-                            m_direction.x = 1;
-                        }
-                        else if (m_direction.x < 0)
-                        {
-                            m_direction.x = -1;
-                        }
-                        if (m_direction.z > 0)
-                        {
-                            m_direction.z = 1;
-                        }
-                        else if (m_direction.z < 0)
-                        {
-                            m_direction.z = -1;
-                        }
-                        m_direction.Normalize();
-                        m_tireRb.velocity = m_speed * m_direction;
-                    }
-                       DirectionChanged?.Invoke(m_direction);
-                }
+//                if (collision.gameObject.tag == "Wall")
+//                {
+                    DirectionChanged?.Invoke(m_direction);
+   //             }
             }
 
             private void PlatformMovementOn(Vector3 i_newDir)
