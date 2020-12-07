@@ -6,18 +6,35 @@ public class OpenDoor : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private ActivateButton m_button1, m_button2, m_button3;
+    [SerializeField] private List<ActivateButton> m_buttons;
+    private int m_buttonNumberActivated = 0;
+    private int m_totalNumberOfKeys;
 
     void Start()
     {
-        
+        m_totalNumberOfKeys = m_buttons.Count;
+        foreach(ActivateButton button in m_buttons)
+        {
+            button.OnActivatedEvent += OnButtonActivated;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnButtonActivated(bool i_isActive)
     {
-        if (!m_button1.GetIsEnabled() && !m_button2.GetIsEnabled() && !m_button3.GetIsEnabled())
+        if(i_isActive)
         {
+            m_buttonNumberActivated++;
+        }
+        else
+        {
+            m_buttonNumberActivated--;
+        }
+        if (m_buttonNumberActivated == m_totalNumberOfKeys)
+        {
+            foreach (ActivateButton button in m_buttons)
+            {
+                button.OnActivatedEvent -= OnButtonActivated;
+            }
             Destroy(this.gameObject);
         }
     }
