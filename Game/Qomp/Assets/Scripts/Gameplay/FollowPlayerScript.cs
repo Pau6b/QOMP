@@ -11,7 +11,6 @@ namespace Game
 
             // Start is called before the first frame update
             public GameObject player;
-            [SerializeField] float offset, height, inclination;
 
             /*PARAMETERS TO VOLUNTARY MOVEMENT*/
             [SerializeField] private Transport m_transport;
@@ -28,13 +27,6 @@ namespace Game
 
             void Start()
             {
-                Vector3 position = transform.position;
-                Vector3 angular = new Vector3(45,0,0);
-                transform.eulerAngles = new Vector3(
-                    transform.eulerAngles.x + inclination,
-                    transform.eulerAngles.y,
-                    transform.eulerAngles.z
-                );
                 m_transport.CameraMovement += CameraMove;
 
                 m_actualCamera = 0;
