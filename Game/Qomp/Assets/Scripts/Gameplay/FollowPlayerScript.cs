@@ -15,18 +15,20 @@ namespace Game
 
             /*PARAMETERS TO VOLUNTARY MOVEMENT*/
             [SerializeField] private Transport m_transport;
+            private float m_time;
             private bool m_moving = false;
-            private Vector3 m_movingDirection;
-            private float m_movingPixels, m_speed;
+            private int m_nextCamera;
+            private int m_actualCamera;
 
+            [SerializeField] List<GameObject> m_CameraPoints;
+            private Vector3 m_translation, m_initialPos;
+            private Quaternion m_rotation, m_initialRot;
+
+            private float m_initTime;
 
             void Start()
             {
                 Vector3 position = transform.position;
-                position.x = player.transform.position.x;
-                position.z = player.transform.position.z - offset;
-                position.y = player.transform.position.y + height;
-                transform.position = position;
                 Vector3 angular = new Vector3(45,0,0);
                 transform.eulerAngles = new Vector3(
                     transform.eulerAngles.x + inclination,
@@ -34,42 +36,51 @@ namespace Game
                     transform.eulerAngles.z
                 );
                 m_transport.CameraMovement += CameraMove;
+
+                m_actualCamera = 0;
+                this.transform.position = m_CameraPoints[m_actualCamera].transform.position;
+                this.transform.rotation = m_CameraPoints[m_actualCamera].transform.rotation;
             }
 
             // Update is called once per frame
             void Update()
             {
-                if (m_moving && m_movingPixels > 0)
+                if (m_moving)
                 {
-                    Vector3 act_pos = transform.position;
-                    float movement = m_movingPixels / m_speed;
-                    if (movement > m_movingPixels)
+                    m_initTime += Time.deltaTime;
+                    if (m_initTime > m_time)
                     {
-                        movement = m_movingPixels;
+                        m_initTime = m_time;
+                        m_moving = false;
                     }
-                    transform.position = act_pos +
-                        new Vector3(m_movingDirection.x*movement, 
-                                    m_movingDirection.y*movement, 
-                                    m_movingDirection.z*movement);
-                    m_movingPixels -= movement;
+                    Vector3 movement = new Vector3(Mathf.Lerp(0, m_translation.x, m_initTime / m_time),
+                                                Mathf.Lerp(0, m_translation.y, m_initTime / m_time),
+                                                Mathf.Lerp(0, m_translation.z, m_initTime / m_time));
+
+                    Quaternion rotation = Quaternion.Lerp(m_initialRot, m_rotation, m_initTime / m_time);
+
+                    Vector3 pos_act = m_initialPos - movement;
+                    this.transform.position = pos_act;
+                    this.transform.rotation = rotation;
                 }
-                else if (m_movingPixels < 0)
-                {
-                    m_moving = false;
-                }
-
-
-
             }
 
-            private void CameraMove(Vector3 i_Direction, float i_Speed, float i_travel)
+            private void CameraMove(float i_time, int i_travel)
             {
-                m_moving = true;
-                m_movingDirection = i_Direction;
-                m_movingPixels = i_travel;
-                m_speed = i_Speed;
+                m_moving = i_travel != m_actualCamera;
+                if (m_moving)
+                {
+                    m_actualCamera = m_nextCamera;
+                    m_nextCamera = i_travel;
+                    m_initTime = 0;
+                    m_time = i_time;
+                    m_nextCamera = i_travel;
+                    m_translation = this.transform.position - m_CameraPoints[m_nextCamera].transform.position;
+                    m_initialPos = this.transform.position;
+                    m_initialRot = this.transform.rotation;
+                    m_rotation = m_CameraPoints[m_nextCamera].transform.rotation;
+                }
             }
-
         }
     }
 }
