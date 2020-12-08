@@ -16,7 +16,7 @@ public class Transport : MonoBehaviour
     public event PlatformMovementOff PlataformModeOff;
 
 
-    public delegate void CameraMove(Vector3 i_Direction, float i_Speed, float i_travel);
+    public delegate void CameraMove(float i_time, int i_travel);
     public event CameraMove CameraMovement;
 
     // Start is called before the first frame update
@@ -56,10 +56,9 @@ public class Transport : MonoBehaviour
 
         else if (i_other.gameObject.tag == "Section")
         {
-            Vector3 direction = i_other.GetComponent<CameraChange>().getDir();
-            float velocity = i_other.GetComponent<CameraChange>().getVel();
-            float transition = i_other.GetComponent<CameraChange>().getTran();
-            CameraMovement?.Invoke(direction, velocity, transition);
+             int transition = i_other.GetComponent<CameraChange>().getTran();
+            float time = i_other.GetComponent<CameraChange>().getTime();
+            CameraMovement?.Invoke(time, transition);
         }
     }
 }

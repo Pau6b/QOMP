@@ -6,10 +6,8 @@ public class CameraChange : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
-
-    [SerializeField] private Vector3 m_Dir;
-    [SerializeField] private float m_travel, m_speed;
+    [SerializeField] private int m_nextCamera;
+    [SerializeField] private float m_time;
 
     void Start()
     {
@@ -21,19 +19,12 @@ public class CameraChange : MonoBehaviour
     {
 
     }
-
-    public Vector3 getDir()
+    public float getTime()
     {
-        return m_Dir;
+        return m_time;
     }
-
-    public float getVel()
+    public int getTran()
     {
-        return m_speed;
-    }
-
-    public float getTran()
-    {
-        return m_travel;
+        return m_nextCamera;
     }
 }
