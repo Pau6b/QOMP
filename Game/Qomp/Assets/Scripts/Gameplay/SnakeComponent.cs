@@ -6,17 +6,28 @@ namespace Game
 {
     namespace Gameplay
     {
+        public enum SnakeEndReason
+        {
+            Died,
+            DoorBroken
+        }
         public class SnakeComponent : MonoBehaviour
         {
             // Start is called before the first frame update
-            public delegate void OnSnakeEvent();
-            public event OnSnakeEvent SnakeStarted;
-            public event OnSnakeEvent SnakeEnded;
+            public delegate void OnSnakeStartEvent();
+            public delegate void OnSnakeEndEvent(SnakeEndReason i_snakeEndReason);
+            public event OnSnakeStartEvent SnakeStarted;
+            public event OnSnakeEndEvent SnakeEnded;
 
             [SerializeField] private GameObject m_snakePart;
             [SerializeField] private GameObject m_snakePartsContainer;
             private bool m_inSnake;
             private Vector3 m_previousDirectionChangePoint;
+
+            public void OnDoorBroken()
+            {
+                EndSnake(SnakeEndReason.DoorBroken);
+            }
 
             void Start()
             {
@@ -72,12 +83,17 @@ namespace Game
              
             void OnPlayerRespawned()
             {
+                EndSnake(SnakeEndReason.Died);
+            }
+
+            void EndSnake(SnakeEndReason i_endReason)
+            {
                 m_inSnake = false;
                 for (int i = 0; i < m_snakePartsContainer.transform.childCount; ++i)
                 {
                     GameObject.Destroy(m_snakePartsContainer.transform.GetChild(i).gameObject);
                 }
-                SnakeEnded?.Invoke();
+                SnakeEnded?.Invoke(i_endReason);
             }
         }
 

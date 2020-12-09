@@ -56,12 +56,24 @@ namespace Game
                 m_inSnake = true;
             }
 
-            void OnSnakeEnd()
+            void OnSnakeEnd(Gameplay.SnakeEndReason i_endReason)
             {
                 m_inSnake = false;
-                for(int i = 0; i < m_particleContainer.transform.childCount; ++i)
+                if(i_endReason == Gameplay.SnakeEndReason.Died)
                 {
-                    GameObject.Destroy(m_particleContainer.transform.GetChild(i).gameObject);
+                    for (int i = 0; i < m_particleContainer.transform.childCount; ++i)
+                    {
+                        GameObject.Destroy(m_particleContainer.transform.GetChild(i).gameObject);
+                    }
+                }
+                if(i_endReason == Gameplay.SnakeEndReason.DoorBroken)
+                {
+                    for(int i = 0; i < m_particleContainer.transform.childCount; ++i)
+                    {
+                        ParticleSystem particleSystem = m_particleContainer.transform.GetChild(i).GetComponent<ParticleSystem>();
+                        var mainComponent = particleSystem.main;
+                        mainComponent.loop = false;
+                    }
                 }
             }
         }

@@ -56,7 +56,7 @@ public class Transport : MonoBehaviour
 
         else if (i_other.gameObject.tag == "Section")
         {
-             int transition = i_other.GetComponent<CameraChange>().getTran();
+            int transition = i_other.GetComponent<CameraChange>().getTran();
             float time = i_other.GetComponent<CameraChange>().getTime();
             CameraMovement?.Invoke(time, transition);
         }
