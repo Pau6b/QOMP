@@ -16,7 +16,6 @@ namespace Game
             [SerializeField] private Transport m_transport;
             private float m_time;
             private bool m_moving = false;
-            private int m_nextCamera;
             private int m_actualCamera;
 
             [SerializeField] List<GameObject> m_CameraPoints;
@@ -57,20 +56,23 @@ namespace Game
                 }
             }
 
+            private void OnGUI()
+            {
+                GUILayout.Label("currentCamera: " + m_actualCamera);
+            }
+
             private void CameraMove(float i_time, int i_travel)
             {
                 m_moving = i_travel != m_actualCamera;
                 if (m_moving)
                 {
-                    m_actualCamera = m_nextCamera;
-                    m_nextCamera = i_travel;
+                    m_actualCamera = i_travel;
                     m_initTime = 0;
                     m_time = i_time;
-                    m_nextCamera = i_travel;
-                    m_translation = this.transform.position - m_CameraPoints[m_nextCamera].transform.position;
+                    m_translation = this.transform.position - m_CameraPoints[m_actualCamera].transform.position;
                     m_initialPos = this.transform.position;
                     m_initialRot = this.transform.rotation;
-                    m_rotation = m_CameraPoints[m_nextCamera].transform.rotation;
+                    m_rotation = m_CameraPoints[m_actualCamera].transform.rotation;
                 }
             }
         }

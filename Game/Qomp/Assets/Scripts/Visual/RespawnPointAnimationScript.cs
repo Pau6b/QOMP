@@ -26,7 +26,7 @@ namespace Game
             public void SetFirstAsSpawnerActive()
             {
                 m_animator.SetBool("isActive", true);
-                m_animator.playbackTime = 0.3f;
+                //m_animator.playbackTime = 0.3f;
             }
         }
     }

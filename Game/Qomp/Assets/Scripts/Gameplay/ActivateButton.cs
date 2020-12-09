@@ -24,7 +24,7 @@ public class ActivateButton : MonoBehaviour
             foreach(GameObject objectToSwap in m_objectsToSwap)
             {
                 bool objectIsActive = objectToSwap.activeInHierarchy;
-                objectToSwap.SetActive(objectIsActive);
+                objectToSwap.SetActive(!objectIsActive);
             }
             if (isKey)
             {
