@@ -15,7 +15,13 @@ namespace Game
             public GameObject m_spawner;
             Vector3 m_velocity;
             Rigidbody m_rb;
+            bool m_canDie = true;
 
+            public void SetCanDie(bool i_canDie)
+            {
+                m_canDie = i_canDie;
+            }
+            
             private void Start()
             {
                 m_rb = GetComponent<Rigidbody>();
@@ -29,7 +35,7 @@ namespace Game
             private void OnTriggerEnter(Collider i_other)
             {
                 bool isSnakePartActive = i_other.gameObject.tag == "SnakePart" && i_other.GetComponent<SnakePartActivateComponent>().GetIsActive();
-                if (i_other.gameObject.tag == "Spike" || isSnakePartActive)
+                if ((i_other.gameObject.tag == "Spike" || isSnakePartActive) && m_canDie)
                 {
                     Vector3 newPosition = m_spawner.transform.position;
                     newPosition.y = transform.position.y;
