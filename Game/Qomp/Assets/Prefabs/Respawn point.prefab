@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 8467705464483340579}
   - component: {fileID: 2057936900769111451}
   - component: {fileID: 4723458398892320527}
+  - component: {fileID: 3431261681155448637}
   m_Layer: 0
   m_Name: Respawn point
   m_TagString: RespawnPoint
@@ -281,6 +282,18 @@ CapsuleCollider:
   m_Height: 5.240222
   m_Direction: 1
   m_Center: {x: 0, y: 1.428453, z: 0}
+--- !u!114 &3431261681155448637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609826477803145478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017b8e4fd54cebb44b5b5623d12b582f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8797254111477201138
 GameObject:
   m_ObjectHideFlags: 0

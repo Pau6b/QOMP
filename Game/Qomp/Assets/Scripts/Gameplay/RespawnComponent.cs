@@ -21,6 +21,7 @@ namespace Game
                 m_rb = GetComponent<Rigidbody>();
                 m_velocity = m_rb.velocity;
                 Vector3 newPosition = m_spawner.transform.position;
+                m_spawner.GetComponent<Visual.RespawnPointAnimationScript>().SetFirstAsSpawnerActive();
                 newPosition.y = transform.position.y;
                 transform.position = newPosition;
             }
@@ -38,7 +39,9 @@ namespace Game
                 }
                 if (i_other.gameObject.tag == "RespawnPoint" && m_spawner != i_other.gameObject)
                 {
+                    m_spawner.GetComponent<Visual.RespawnPointAnimationScript>().SetActive(false);
                     m_spawner = i_other.gameObject;
+                    m_spawner.GetComponent<Visual.RespawnPointAnimationScript>().SetActive(true);
                     m_velocity = m_rb.velocity;
                 }
             }
