@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road-2-Lane-Corner
       objectReference: {fileID: 0}
+    - target: {fileID: 4625396261209402634, guid: 076d2972b4de744438e8701847180013, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 5439052885662775216, guid: 076d2972b4de744438e8701847180013, type: 3}
       propertyPath: m_RootOrder
       value: 0
