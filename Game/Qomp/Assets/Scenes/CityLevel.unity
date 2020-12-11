@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969463148373786960, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
       propertyPath: m_distance
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2969463148373786960, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
       propertyPath: m_direction.z
@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969463148373786960, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
       propertyPath: m_fastAproach
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2969463148373786960, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
       propertyPath: m_automatic_vel.z
