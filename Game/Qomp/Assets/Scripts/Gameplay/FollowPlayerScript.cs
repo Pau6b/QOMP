@@ -55,12 +55,6 @@ namespace Game
                     this.transform.rotation = rotation;
                 }
             }
-
-            private void OnGUI()
-            {
-                GUILayout.Label("currentCamera: " + m_actualCamera);
-            }
-
             private void CameraMove(float i_time, int i_travel)
             {
                 m_moving = i_travel != m_actualCamera;

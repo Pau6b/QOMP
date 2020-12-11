@@ -14,10 +14,7 @@ namespace Game
             public event OnCollisionInformed Collided;
             private void OnCollisionEnter(Collision i_other)
             {
-                if (i_other.gameObject.tag == "Player")
-                {
-                    Collided?.Invoke(i_other);
-                }
+               Collided?.Invoke(i_other);
             }
         }
     }
