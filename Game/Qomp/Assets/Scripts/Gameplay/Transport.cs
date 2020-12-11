@@ -34,16 +34,25 @@ public class Transport : MonoBehaviour
     {
         if (i_other.gameObject.tag == "Transport")
         {
-            if (!m_traveling)
+            TransportFloor transportFloor = i_other.GetComponent<TransportFloor>();
+            if (!m_traveling && transportFloor.CanMoveUFO())
             {
                 m_traveling = true;
-                m_travelDir = i_other.GetComponent<TransportFloor>().getDir();
-                m_mode = i_other.GetComponent<TransportFloor>().getMode();
+                m_travelDir = transportFloor.getDir();
+                m_mode = transportFloor.getMode();
                 PlataformModeOn?.Invoke(m_travelDir);
             }
             else
             {
                 m_traveling = false;
+                foreach(GameObject objectToDeactivate in transportFloor.GetObjectsToDeactivate())
+                {
+                    objectToDeactivate.SetActive(false);
+                }
+                foreach (GameObject objectToActivate in transportFloor.GetObjectsToActivate())
+                {
+                    objectToActivate.SetActive(true);
+                }
                 PlataformModeOff?.Invoke();
             }
         }
