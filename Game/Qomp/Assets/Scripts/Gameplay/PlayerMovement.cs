@@ -6,15 +6,19 @@ namespace Game
 {
     namespace Gameplay
     {
+        public enum DirectionChangeReason
+        {
+            Requested,
+            Collided
+        }
         public class PlayerMovement : MonoBehaviour
         {
             public Vector3 m_direction;
             public float m_speed;
             Rigidbody m_tireRb;
 
-            public delegate void OnDirectionChanged(Vector3 i_direction);
+            public delegate void OnDirectionChanged(DirectionChangeReason i_ChangeReason, Vector3 i_direction, Collision i_collision);
             public event OnDirectionChanged DirectionChanged;
-            public event OnDirectionChanged DirectionChangedRequested;
 
             [SerializeField] private Transport m_TransportMovement;
             private bool m_fixDir = true;
@@ -39,8 +43,7 @@ namespace Game
                     velocity.z = -velocity.z;
                     m_tireRb.velocity = velocity;
                     m_direction = m_tireRb.velocity.normalized;
-                    DirectionChanged?.Invoke(m_direction);
-                    DirectionChangedRequested?.Invoke(m_direction);
+                    DirectionChanged?.Invoke(DirectionChangeReason.Requested,m_direction, null);
                 }
             }
 
@@ -82,7 +85,7 @@ namespace Game
 
             private void OnCollisionEnter(Collision collision)
             {
-                    DirectionChanged?.Invoke(m_direction);
+                DirectionChanged?.Invoke(DirectionChangeReason.Collided,m_direction, collision);
             }
 
             private void PlatformMovementOn(Vector3 i_newDir)

@@ -15239,6 +15239,10 @@ PrefabInstance:
       propertyPath: m_particleContainer
       value: 
       objectReference: {fileID: 1757723915}
+    - target: {fileID: 8794675125631196379, guid: 2f5e439c7a1c40c459bae7fbdeae6465, type: 3}
+      propertyPath: m_particleContainer
+      value: 
+      objectReference: {fileID: 1757723915}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f5e439c7a1c40c459bae7fbdeae6465, type: 3}
 --- !u!114 &793540423 stripped
@@ -35109,7 +35113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1757723916}
   m_Layer: 0
-  m_Name: SmokeParticlesContainer
+  m_Name: ParticlesContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

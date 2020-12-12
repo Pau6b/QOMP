@@ -10,29 +10,32 @@ namespace Game
         {
             [SerializeField] private GameObject m_smokePrefab;
             [SerializeField] private GameObject m_particleContainer;
-            [SerializeField] private float m_distanceToInstantiate = 1;
+            [SerializeField] private float m_distanceToInstantiate = 0;
 
             // Start is called before the first frame update
             void Start()
             {
                 Gameplay.PlayerMovement playerMovement = GetComponent<Gameplay.PlayerMovement>();
-                playerMovement.DirectionChangedRequested += OnDirectionChanged;
+                playerMovement.DirectionChanged += OnDirectionChanged;
             }
 
             private void OnDestroy()
             {
                 Gameplay.PlayerMovement playerMovement = GetComponent<Gameplay.PlayerMovement>();
-                playerMovement.DirectionChangedRequested -= OnDirectionChanged;
+               playerMovement.DirectionChanged-= OnDirectionChanged;
             }
 
-            void OnDirectionChanged(Vector3 i_direction)
+            void OnDirectionChanged(Gameplay.DirectionChangeReason i_reason, Vector3 i_direction, Collision i_collision)
             {
-                Vector3 position = transform.position - i_direction * m_distanceToInstantiate ;
-                GameObject smoke = GameObject.Instantiate(m_smokePrefab);
-                smoke.transform.position = position;
-                smoke.transform.parent = m_particleContainer.transform;
-                ParticleSystem smokeParticleSystem = smoke.GetComponent<ParticleSystem>();
-                smokeParticleSystem.Play();
+                if (i_reason == Gameplay.DirectionChangeReason.Requested)
+                {
+                    Vector3 position = transform.position - i_direction * m_distanceToInstantiate ;
+                    GameObject smoke = GameObject.Instantiate(m_smokePrefab);
+                    smoke.transform.position = position;
+                    smoke.transform.parent = m_particleContainer.transform;
+                    ParticleSystem smokeParticleSystem = smoke.GetComponent<ParticleSystem>();
+                    smokeParticleSystem.Play();
+                }
             }
         }
     }

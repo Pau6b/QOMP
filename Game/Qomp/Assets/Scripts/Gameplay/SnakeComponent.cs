@@ -51,7 +51,7 @@ namespace Game
                 playerRespawnComponent.Respawned -= OnPlayerRespawned;
             }
 
-            void OnDirectionChanged(Vector3 i_direction)
+            void OnDirectionChanged(DirectionChangeReason i_changeReason, Vector3 i_direction, Collision i_collision)
             {
                 if (m_inSnake)
                 {
