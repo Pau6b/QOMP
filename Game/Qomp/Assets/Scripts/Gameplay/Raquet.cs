@@ -14,9 +14,9 @@ public class Raquet : MonoBehaviour
     [SerializeField] private float m_speedUp;
     [SerializeField] private bool m_fastAproach;
     [SerializeField] private bool m_automatic;
-    [SerializeField] private Vector3 m_automatic_vel;
+    [SerializeField] private Vector3 m_automaticDir;
+    [SerializeField] private float m_automaticVelocity;
     bool m_isFollowingPlayer = false;
-    bool m_changeDirection = false;
 
     void Start()
     {
@@ -67,12 +67,12 @@ public class Raquet : MonoBehaviour
         
         else if (m_automatic)
         {
-            if (m_changeDirection)
+            if (m_isFollowingPlayer)
             {
-                m_changeDirection = false;
-                 m_automatic_vel = -m_automatic_vel;
+                m_automaticDir = m_tireRb.velocity.normalized;
+                m_isFollowingPlayer = false;
             }
-            m_tireRb.velocity = new Vector3(m_direction.x*m_automatic_vel.x, m_direction.y * m_automatic_vel.y, m_direction.z * m_automatic_vel.z);
+            m_tireRb.velocity = new Vector3(m_direction.x*m_automaticDir.x, m_direction.y * m_automaticDir.y, m_direction.z * m_automaticDir.z);
         }
 
         else
@@ -107,21 +107,10 @@ public class Raquet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            if (m_isFollowingPlayer)
+            if (!m_isFollowingPlayer)
             {
-                m_changeDirection = true;
+                m_automaticDir = -m_automaticDir;
             }
-            else
-            {
-                m_automatic_vel = -m_automatic_vel;
-            }
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            m_changeDirection = false;
         }
     }
 
