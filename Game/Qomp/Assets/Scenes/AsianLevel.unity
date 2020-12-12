@@ -7482,7 +7482,7 @@ PrefabInstance:
       objectReference: {fileID: 364132855}
     - target: {fileID: 1783352161785297272, guid: 8af9ba7af706a5d4ba7eb0c4c5057f51, type: 3}
       propertyPath: m_speed
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1783352161785297272, guid: 8af9ba7af706a5d4ba7eb0c4c5057f51, type: 3}
       propertyPath: m_distance
@@ -7510,7 +7510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2248708170598429457, guid: 8af9ba7af706a5d4ba7eb0c4c5057f51, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.21
+      value: 9.64
       objectReference: {fileID: 0}
     - target: {fileID: 2248708170598429457, guid: 8af9ba7af706a5d4ba7eb0c4c5057f51, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24382,7 +24382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177394555956253241, guid: 5b3439f362ca15c4da67ba01a651f58d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5177394555956253380, guid: 5b3439f362ca15c4da67ba01a651f58d, type: 3}
       propertyPath: m_buttons.Array.data[0]
@@ -30686,8 +30686,8 @@ Transform:
   - {fileID: 1581508101}
   - {fileID: 1398367012}
   - {fileID: 306012291}
-  - {fileID: 783486567}
   - {fileID: 39632358}
+  - {fileID: 783486567}
   - {fileID: 434826225}
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -39875,6 +39875,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3560309755226402554, guid: 0366fc2c359e48344a188c54d0c457a3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6477467238011460918, guid: 0366fc2c359e48344a188c54d0c457a3, type: 3}
       propertyPath: m_Name
       value: BlackHole
