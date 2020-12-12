@@ -7295,6 +7295,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1428297719}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_speed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_distance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic
       value: 1
       objectReference: {fileID: 0}
@@ -7303,8 +7311,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticDir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic_vel.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticVelocity
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
@@ -7718,6 +7734,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1428297719}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_speed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_distance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic
       value: 1
       objectReference: {fileID: 0}
@@ -7726,8 +7750,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticDir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic_vel.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticVelocity
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
@@ -12360,19 +12392,27 @@ PrefabInstance:
       objectReference: {fileID: 1428297719}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_speed
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_distance
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticDir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic_vel.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticVelocity
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
@@ -12877,12 +12917,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticDir.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic_vel.x
       value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic_vel.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticVelocity
+      value: 8.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
@@ -15227,19 +15275,27 @@ PrefabInstance:
       objectReference: {fileID: 1428297719}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_speed
-      value: 8.5
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_distance
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticDir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic_vel.z
       value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticVelocity
+      value: 9.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
@@ -18398,19 +18454,27 @@ PrefabInstance:
       objectReference: {fileID: 1428297719}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_speed
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_distance
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticDir.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
       propertyPath: m_automatic_vel.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436090095746821495, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
+      propertyPath: m_automaticVelocity
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159af46e38a3a7541a5e71569261f3aa, type: 3}
