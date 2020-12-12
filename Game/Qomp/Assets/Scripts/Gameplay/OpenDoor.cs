@@ -35,7 +35,8 @@ public class OpenDoor : MonoBehaviour
             {
                 button.OnActivatedEvent -= OnButtonActivated;
             }
-            Destroy(this.gameObject);
+            Destroy(GetComponent<Collider>());
+            GetComponent<Animator>().SetBool("isOpen", true);
         }
     }
 }

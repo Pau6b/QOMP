@@ -9,14 +9,12 @@ namespace Game
         public class SnakeBreakableDoor : MonoBehaviour
         {
             [SerializeField] private SnakeComponent m_snakeComponent;
-            private Collider m_collider;
 
             void Start()
             {
-                m_collider = GetComponent<Collider>();
+                GetComponent<Collider>().isTrigger = false;
                 m_snakeComponent.SnakeStarted += OnSnakeStart;
                 m_snakeComponent.SnakeEnded += OnSnakeEnd;
-                m_collider.isTrigger = false;
             }
 
             private void OnDestroy()
@@ -30,18 +28,27 @@ namespace Game
                 if (other.tag == "Player")
                 {
                     m_snakeComponent.OnDoorBroken();
-                    GameObject.Destroy(transform.gameObject);
+                    GetComponent<Animator>().SetBool("isOpen", true);
+                    Destroy(GetComponent<Collider>());
                 }
             }
 
             void OnSnakeStart()
             {
-                m_collider.isTrigger = true;
+                Collider collider = GetComponent<Collider>();
+                if (collider != null)
+                {
+                    collider.isTrigger = true;
+                }
             }
 
             void OnSnakeEnd(SnakeEndReason i_endReason)
             {
-                m_collider.isTrigger = false;
+                Collider collider = GetComponent<Collider>();
+                if (collider != null)
+                {
+                    collider.isTrigger = false;
+                }
             }
         }
 

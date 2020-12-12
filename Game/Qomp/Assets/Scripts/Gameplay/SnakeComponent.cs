@@ -81,7 +81,7 @@ namespace Game
                 }
             }
              
-            void OnPlayerRespawned()
+            void OnPlayerRespawned(Vector3 i_oldPosition)
             {
                 EndSnake(SnakeEndReason.Died);
             }

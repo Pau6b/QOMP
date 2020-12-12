@@ -1396,6 +1396,10 @@ PrefabInstance:
       propertyPath: m_snakePartsContainer
       value: 
       objectReference: {fileID: 1412070150}
+    - target: {fileID: 1296763175231258685, guid: 2f5e439c7a1c40c459bae7fbdeae6465, type: 3}
+      propertyPath: m_particleContainer
+      value: 
+      objectReference: {fileID: 345770809}
     - target: {fileID: 1625380445922372476, guid: 2f5e439c7a1c40c459bae7fbdeae6465, type: 3}
       propertyPath: m_particleContainer
       value: 

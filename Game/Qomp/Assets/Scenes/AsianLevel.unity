@@ -1588,6 +1588,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeStartPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1974956253462318417, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
+      propertyPath: m_snakeComponent
+      value: 
+      objectReference: {fileID: 1250293761}
+    - target: {fileID: 1974956253462318417, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
+      propertyPath: m_respawnComponent
+      value: 
+      objectReference: {fileID: 1250293760}
+    - target: {fileID: 1974956253462318417, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
+      propertyPath: m_particleContainer
+      value: 
+      objectReference: {fileID: 1048896591}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
 --- !u!1001 &129516464
@@ -11682,7 +11694,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeDoor (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3272390648522981065, guid: aa1b153e62ced2944b727876b5877358, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa1b153e62ced2944b727876b5877358, type: 3}
 --- !u!4 &798737361 stripped
 Transform:
@@ -17079,6 +17092,10 @@ PrefabInstance:
       propertyPath: m_snakePartsContainer
       value: 
       objectReference: {fileID: 1828695412}
+    - target: {fileID: 1296763175231258685, guid: 2f5e439c7a1c40c459bae7fbdeae6465, type: 3}
+      propertyPath: m_particleContainer
+      value: 
+      objectReference: {fileID: 1048896591}
     - target: {fileID: 1625380445922372476, guid: 2f5e439c7a1c40c459bae7fbdeae6465, type: 3}
       propertyPath: m_particleContainer
       value: 
@@ -21726,6 +21743,10 @@ PrefabInstance:
     - target: {fileID: 5177394555956253241, guid: 5b3439f362ca15c4da67ba01a651f58d, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177394555956253241, guid: 5b3439f362ca15c4da67ba01a651f58d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5177394555956253380, guid: 5b3439f362ca15c4da67ba01a651f58d, type: 3}
       propertyPath: m_buttons.Array.data[0]
@@ -27174,7 +27195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871735897}
   m_LocalRotation: {x: 0.4652283, y: 0, z: 0, w: 0.8851908}
-  m_LocalPosition: {x: 0, y: 11, z: -39}
+  m_LocalPosition: {x: -114.07, y: 11, z: 6.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -31251,7 +31272,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeDoor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3272390648522981065, guid: aa1b153e62ced2944b727876b5877358, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa1b153e62ced2944b727876b5877358, type: 3}
 --- !u!1 &100718857341855054 stripped
 GameObject:
@@ -34658,6 +34680,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeStartPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 1974956253462318417, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
+      propertyPath: m_snakeComponent
+      value: 
+      objectReference: {fileID: 1250293761}
+    - target: {fileID: 1974956253462318417, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
+      propertyPath: m_respawnComponent
+      value: 
+      objectReference: {fileID: 1250293760}
+    - target: {fileID: 1974956253462318417, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
+      propertyPath: m_particleContainer
+      value: 
+      objectReference: {fileID: 1048896591}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51c2a793367d8a4caca39a9b98a87d3, type: 3}
 --- !u!23 &3844920710045581601

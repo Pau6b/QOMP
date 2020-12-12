@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4643346033243283614}
   - component: {fileID: 1625380445922372476}
   - component: {fileID: 8794675125631196379}
+  - component: {fileID: 1296763175231258685}
   m_Layer: 0
   m_Name: Ufo
   m_TagString: Player
@@ -153,6 +154,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_sparkPrefab: {fileID: 1297937073129364672, guid: 69418da21aaf4054dab4d022a61e1bd3, type: 3}
+  m_particleContainer: {fileID: 0}
+--- !u!114 &1296763175231258685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560179921161997976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0692832c925003547bf3a06f0e4e1961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_explosionPrefab: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
   m_particleContainer: {fileID: 0}
 --- !u!1 &2030242292623961799
 GameObject:

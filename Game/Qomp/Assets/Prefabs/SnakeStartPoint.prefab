@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3939818494201483316}
   - component: {fileID: 1245803032972895486}
   - component: {fileID: 5063764158039167974}
+  - component: {fileID: 1974956253462318417}
   m_Layer: 0
   m_Name: SnakeStartPoint
   m_TagString: SnakeEvolvePoint
@@ -96,3 +97,19 @@ CapsuleCollider:
   m_Height: 11.4329605
   m_Direction: 1
   m_Center: {x: 0.00000047683716, y: 5.391371, z: -0.00000047683716}
+--- !u!114 &1974956253462318417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741131526063490347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1755923209540194d8b45aec98ca0c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_respawnComponent: {fileID: 0}
+  m_snakeComponent: {fileID: 0}
+  m_smokeRadiationPrefab: {fileID: 815065123713528747, guid: 11b41fa416d495645a31f4f618695c82, type: 3}
+  m_particleContainer: {fileID: 0}

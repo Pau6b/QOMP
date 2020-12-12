@@ -8,7 +8,7 @@ namespace Game
     {
         public class RespawnComponent : MonoBehaviour
         {
-            public delegate void OnPlayerRespawned();
+            public delegate void OnPlayerRespawned(Vector3 i_oldPosition);
             public event OnPlayerRespawned Respawned;
 
             [InspectorName("First Spawner")]
@@ -37,11 +37,12 @@ namespace Game
                 bool isSnakePartActive = i_other.gameObject.tag == "SnakePart" && i_other.GetComponent<SnakePartActivateComponent>().GetIsActive();
                 if ((i_other.gameObject.tag == "Spike" || isSnakePartActive) && m_canDie)
                 {
+                    Vector3 oldPosition = transform.position;
                     Vector3 newPosition = m_spawner.transform.position;
                     newPosition.y = transform.position.y;
                     transform.position = newPosition;
                     m_rb.velocity = m_velocity;
-                    Respawned?.Invoke();
+                    Respawned?.Invoke(oldPosition);
                 }
                 if (i_other.gameObject.tag == "RespawnPoint" && m_spawner != i_other.gameObject)
                 {
