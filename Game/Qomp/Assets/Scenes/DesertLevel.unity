@@ -6380,7 +6380,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8751101093488102897, guid: 2302b0031bf6d6d459bf7cbbc8212ea8, type: 3}
       propertyPath: m_objectsToSwap.Array.size
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8751101093488102897, guid: 2302b0031bf6d6d459bf7cbbc8212ea8, type: 3}
       propertyPath: m_objectsToSwap.Array.data[0]
@@ -15415,6 +15415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5efff31e17d973544b39a667a77d7b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_easeType: 4
   player: {fileID: 1428297719}
   m_transport: {fileID: 749991831}
   m_CameraPoints:
