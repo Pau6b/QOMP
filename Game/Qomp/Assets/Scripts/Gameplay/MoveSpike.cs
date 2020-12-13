@@ -23,7 +23,10 @@ namespace Game
 
             private void OnTriggerEnter(Collider other)
             {
-                m_rb.velocity = -m_rb.velocity;
+                if (other.transform.tag == "Wall")
+                {
+                    m_rb.velocity = -m_rb.velocity;
+                }
             }
         }
 

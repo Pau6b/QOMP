@@ -28,16 +28,16 @@ namespace Game
             void OnPlayerRespawned(Vector3 i_oldPosition)
             {
                 GetComponent<MeshRenderer>().enabled = true;
-                GameObject smoke = GameObject.Instantiate(m_smokeRadiationPrefab);
-                smoke.transform.position = transform.position;
-                smoke.transform.parent = m_particleContainer.transform;
-                ParticleSystem smokeParticleSystem = smoke.GetComponent<ParticleSystem>();
-                smokeParticleSystem.Play();
             }
 
             void OnSnakeStartEvent()
             {
                 GetComponent<MeshRenderer>().enabled = false;
+                GameObject smoke = GameObject.Instantiate(m_smokeRadiationPrefab);
+                smoke.transform.position = transform.position;
+                smoke.transform.parent = m_particleContainer.transform;
+                ParticleSystem smokeParticleSystem = smoke.GetComponent<ParticleSystem>();
+                smokeParticleSystem.Play();
             }
         }
     }
