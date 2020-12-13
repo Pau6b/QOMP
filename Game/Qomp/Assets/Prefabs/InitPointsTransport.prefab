@@ -93,7 +93,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.4
+  m_Radius: 0.6
   m_Height: 2.3555622
   m_Direction: 1
   m_Center: {x: 0, y: 0.4277811, z: 0}
@@ -111,6 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_direction: {x: 1, y: 0, z: 0}
   m_mode: 0
+  m_canMoveUFO: 1
+  m_objectsToActivate: []
+  m_objectsToDeactivate: []
 --- !u!1 &5270826890961420015
 GameObject:
   m_ObjectHideFlags: 0
