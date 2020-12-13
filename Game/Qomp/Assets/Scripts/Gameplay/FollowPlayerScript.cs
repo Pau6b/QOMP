@@ -66,6 +66,10 @@ namespace Game
                     m_translation = this.transform.position - m_CameraPoints[m_actualCamera].transform.position;
                     //m_initialPos = this.transform.position;
                     //m_initialRot = this.transform.rotation;
+                    if (LeanTween.isTweening(transform.gameObject))
+                    {
+                        LeanTween.cancel(transform.gameObject);
+                    }
                     LeanTween.move(transform.gameObject, m_CameraPoints[m_actualCamera].transform.position, m_time).setEase(m_easeType);
                     m_rotation = m_CameraPoints[m_actualCamera].transform.rotation;
                     LeanTween.rotate(transform.gameObject, m_rotation.eulerAngles, m_time).setEase(m_easeType);
