@@ -12,6 +12,11 @@ namespace Game
             {
                 Core.SceneLoader.LoadScene(Core.SceneLoader.SceneType.Level1);
             }
+
+            public void OnQuitButtonPressd()
+            {
+                Application.Quit();
+            }
         }
     }
 }

@@ -33,22 +33,27 @@ namespace Game
 
                 if ((Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1)) && m_currentScene != 1)
                 {
+                    Time.timeScale = 1;
                     SceneLoader.LoadScene(SceneLoader.SceneType.Level1);
                 }
                 else if ((Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2)) && m_currentScene != 2)
                 {
+                    Time.timeScale = 1;
                     SceneLoader.LoadScene(SceneLoader.SceneType.Level2);
                 }
                 else if ((Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3)) && m_currentScene != 3)
                 {
+                    Time.timeScale = 1;
                     SceneLoader.LoadScene(SceneLoader.SceneType.Level3);
                 }
                 else if ((Input.GetKeyDown(KeyCode.Keypad4) || Input.GetKeyDown(KeyCode.Alpha4)) && m_currentScene != 4)
                 {
+                    Time.timeScale = 1;
                     SceneLoader.LoadScene(SceneLoader.SceneType.Level4);
                 }
                 else if ((Input.GetKeyDown(KeyCode.Keypad5) || Input.GetKeyDown(KeyCode.Alpha5)) && m_currentScene != 5)
                 {
+                    Time.timeScale = 1;
                     SceneLoader.LoadScene(SceneLoader.SceneType.Level5);
                 }
             }
