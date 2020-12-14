@@ -13676,7 +13676,7 @@ PrefabInstance:
       objectReference: {fileID: 1461735219}
     - target: {fileID: 2969463148373786960, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
       propertyPath: m_speed
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2969463148373786960, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
       propertyPath: m_direction.x
@@ -13700,7 +13700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969463148373786960, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
       propertyPath: m_automaticVelocity
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27d5b5c35cb101f43856dba35495405b, type: 3}
