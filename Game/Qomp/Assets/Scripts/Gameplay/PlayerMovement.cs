@@ -23,6 +23,8 @@ namespace Game
             [SerializeField] private Transport m_TransportMovement;
             private bool m_fixDir = true;
 
+            private bool m_freezeY = true;
+
 
 
 
@@ -91,6 +93,18 @@ namespace Game
             private void PlatformMovementOn(Vector3 i_newDir)
             {
                 m_direction = i_newDir;
+                if (i_newDir.y != 0)
+                {
+                    this.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezePositionY;
+                    m_freezeY = false;
+                }
+
+                if (!m_freezeY && i_newDir.y == 0)
+                {
+                    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+                    m_freezeY = true;
+                }
+
                 m_tireRb.velocity = m_speed * m_direction;
                 GetComponent<Collider>().isTrigger = true;
                 m_tireRb.useGravity = false;
@@ -99,6 +113,12 @@ namespace Game
 
             private void PlatformMovementOff()
             {
+                if (!m_freezeY)
+                {
+                    this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+                    m_freezeY = true;
+                }
+
                 float i = Mathf.Max(m_direction.x, Mathf.Max(m_direction.y, m_direction.z));
                 if (i == 0.0)
                 {
