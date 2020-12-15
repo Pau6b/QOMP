@@ -26,6 +26,7 @@ namespace Game
 
             void OnPlayerRespawned(Vector3 i_oldPos)
             {
+                FindObjectOfType<AudioManager>().PlaySound("Explosion");
                 GameObject smoke = GameObject.Instantiate(m_explosionPrefab);
                 smoke.transform.position = i_oldPos;
                 smoke.transform.parent = m_particleContainer.transform;
