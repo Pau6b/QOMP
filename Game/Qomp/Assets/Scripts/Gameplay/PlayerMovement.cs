@@ -63,6 +63,7 @@ namespace Game
                 m_direction = m_tireRb.velocity.normalized;
                 if (Mathf.Abs(m_tireRb.velocity.x) != Mathf.Abs(m_tireRb.velocity.z) && m_fixDir)
                 {
+                    
                     if (m_direction.x > 0)
                     {
                         m_direction.x = 1;
@@ -87,6 +88,7 @@ namespace Game
 
             private void OnCollisionEnter(Collision collision)
             {
+                FindObjectOfType<AudioManager>().PlaySound("Golpe");
                 DirectionChanged?.Invoke(DirectionChangeReason.Collided,m_direction, collision);
             }
 
