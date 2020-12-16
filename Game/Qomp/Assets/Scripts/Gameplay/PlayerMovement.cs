@@ -68,7 +68,7 @@ namespace Game
                     {
                         m_direction.x = 1;
                     }
-                    else if (m_direction.x < 0)
+                    else if (m_direction.x <= 0)
                     {
                         m_direction.x = -1;
                     }
@@ -76,7 +76,7 @@ namespace Game
                     {
                         m_direction.z = 1;
                     }
-                    else if (m_direction.z < 0)
+                    else if (m_direction.z <= 0)
                     {
                         m_direction.z = -1;
                     }

@@ -39,7 +39,7 @@ namespace Game
                         SceneManager.LoadScene("MedievalLevel");
                         break;
                     case SceneType.Level5:
-                        SceneManager.LoadScene("Space");
+                        SceneManager.LoadScene("SpaceLevel");
                         break;
                     default:
                         break;
