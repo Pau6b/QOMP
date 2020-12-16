@@ -75,6 +75,7 @@ namespace Game
             {
                  if (i_other.gameObject.tag == "SnakeEvolvePoint")
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("Snake");
                     m_inSnake = true;
                     m_previousDirectionChangePoint = transform.position;
                     SnakeStarted?.Invoke();
@@ -83,11 +84,13 @@ namespace Game
              
             void OnPlayerRespawned(Vector3 i_oldPosition)
             {
+
                 EndSnake(SnakeEndReason.Died);
             }
 
             void EndSnake(SnakeEndReason i_endReason)
             {
+                FindObjectOfType<AudioManager>().StopSound("Snake");
                 m_inSnake = false;
                 for (int i = 0; i < m_snakePartsContainer.transform.childCount; ++i)
                 {

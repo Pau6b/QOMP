@@ -41,6 +41,7 @@ namespace Game
             {
                 if (Input.GetKeyDown(KeyCode.Space) && m_fixDir)
                 {
+                    FindObjectOfType<AudioManager>().PlaySound("Dash");
                     Vector3 velocity = m_tireRb.velocity;
                     velocity.z = -velocity.z;
                     m_tireRb.velocity = velocity;

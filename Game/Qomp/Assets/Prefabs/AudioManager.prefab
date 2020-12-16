@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8493678234430317428
+--- !u!1 &91136896100423812
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4338819031582307598}
-  - component: {fileID: 6568114518405156169}
+  - component: {fileID: 91136896100423814}
+  - component: {fileID: 91136896100423815}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4338819031582307598
+--- !u!4 &91136896100423814
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8493678234430317428}
+  m_GameObject: {fileID: 91136896100423812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 43.76204, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6568114518405156169
+--- !u!114 &91136896100423815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8493678234430317428}
+  m_GameObject: {fileID: 91136896100423812}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8993cf54053c6aa48ae9493213c9de3b, type: 3}
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Golpe
-    clip: {fileID: 8300000, guid: 9696fefeae85a3b4c9048e352a23d9a7, type: 3}
+    clip: {fileID: 8300000, guid: b58af80d4be8f814ba939842516c8986, type: 3}
     volume: 1
     pitch: 3
     loop: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: AsianLevel
     clip: {fileID: 8300000, guid: f8719100b547b1f4886ded5c6597f63f, type: 3}
-    volume: 0.663
+    volume: 0.488
     pitch: 1.09
     loop: 1
     source: {fileID: 0}
@@ -85,4 +85,22 @@ MonoBehaviour:
     volume: 1
     pitch: 3
     loop: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: 8ff3c383439f24e4a958ec9baae50979, type: 3}
+    volume: 0.664
+    pitch: 1.36
+    loop: 0
+    source: {fileID: 0}
+  - name: Key
+    clip: {fileID: 8300000, guid: 793a4ebf0a976c44c87cb89376727ade, type: 3}
+    volume: 0.664
+    pitch: 1.36
+    loop: 0
+    source: {fileID: 0}
+  - name: Snake
+    clip: {fileID: 8300000, guid: ede1b620ce1ad8341bcbce849557e350, type: 3}
+    volume: 0.664
+    pitch: 1.36
+    loop: 1
     source: {fileID: 0}

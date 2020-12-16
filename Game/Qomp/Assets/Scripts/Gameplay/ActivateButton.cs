@@ -25,6 +25,7 @@ public class ActivateButton : MonoBehaviour
                 bool objectIsActive = objectToSwap.activeInHierarchy;
                 objectToSwap.SetActive(!objectIsActive);
             }
+            FindObjectOfType<AudioManager>().PlaySound("Key");
             if (isKey)
             {
                 Destroy(this.gameObject);
